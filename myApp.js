@@ -7,7 +7,7 @@ let app = express();
 //let absolutePath = __dirname + '/views/index.html'
 
 app.get('/', (req, res) => {
-  res.json({"message": "Hello json"})
+  res.json({ "message": "Hello json" })
 });
 
 
