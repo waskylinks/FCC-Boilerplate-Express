@@ -12,7 +12,7 @@ let app = express();
 app.get('/json', (req, res) => {
   let message = process.env.MESSAGE_STYLE === 'uppercase'
     ? "HELLO JSON"
-    : "hello json";
+    : "Hello json";
     res.json({ "message": message });
   });
 
