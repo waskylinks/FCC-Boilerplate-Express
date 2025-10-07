@@ -6,9 +6,13 @@ let app = express();
 
 //let absolutePath = __dirname + '/views/index.html'
 
+
 app.get('/json', (req, res) => {
-  res.json({ "message": "Hello json" })
-});
+  let message = process.env.MESSAGE_STYLE === 'uppercase'
+    ? "HELLO JSON"
+    : "hello json";
+    res.json({ "message": message });
+  });
 
 
 
