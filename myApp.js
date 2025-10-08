@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 
 let express = require('express');
 let app = express();
@@ -9,54 +9,27 @@ let app = express();
 //let absolutePath = __dirname + '/views/index.html'
 
 // 🔹 Root-level middleware (must come before routes)
+/*
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 });
-
-
+*/
+ /*
 app.get('/json', (req, res) => {
   let message = process.env.MESSAGE_STYLE === 'uppercase'
     ? "HELLO JSON"
     : "Hello json";
     res.json({ "message": message });
   });
+  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  app.get('/now',(req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  }, (req, res) => {
+    res.json({time: req.time});
+  })
 
 
  module.exports = app;
