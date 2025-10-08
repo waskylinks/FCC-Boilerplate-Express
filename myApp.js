@@ -3,6 +3,9 @@
 let express = require('express');
 let app = express();
 
+let bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
 //middleware to serve static assets(css,images)
 //app.use('/public', express.static(__dirname + '/public'))
 
@@ -43,5 +46,6 @@ app.get('/json', (req, res) => {
     const last = req.query.last;
     res.json({ name: `${first} ${last}` })
   });
+
 
  module.exports = app;
