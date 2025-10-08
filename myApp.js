@@ -41,9 +41,9 @@ app.get('/json', (req, res) => {
   });
   */
 
-  app.get('/name', (req, res) => {
-    const first = req.query.first;
-    const last = req.query.last;
+  app.post('/name', (req, res) => {
+    const first = req.body.first;
+    const last = req.body.last;
     res.json({ name: `${first} ${last}` })
   });
 
